@@ -11,7 +11,7 @@ import UIKit
 
 class Watch: NSObject,Codable,NSCopying{
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Watch(id: id, name: name, dial: dial, topLayer: topLayer, secHand: secHand, minHand: minHand, hourHand: hourHand, date: date, chronograph: chronograph, grandeComplication: grandeComplication, dayCycle: dayCycle, day: day, battery: battery, skeleton: skeleton, tourbillon: tourbillon, secondOnTop: secondOnTop, stop2Go: stop2Go, gmt: gmt, luminescent: luminescent, biColour: biColour,customizable:customizable, alternative: alternative)
+        let copy = Watch(id: id, name: name, dial: dial, dtime: dtime, topLayer: topLayer, secHand: secHand, minHand: minHand, hourHand: hourHand, date: date, chronograph: chronograph, grandeComplication: grandeComplication, dayCycle: dayCycle, day: day, battery: battery, skeleton: skeleton, tourbillon: tourbillon, secondOnTop: secondOnTop, stop2Go: stop2Go, gmt: gmt, luminescent: luminescent, biColour: biColour,customizable:customizable, alternative: alternative)
         return copy
     }
     
@@ -22,6 +22,7 @@ class Watch: NSObject,Codable,NSCopying{
     private var date : WatchDate?
     private var minHand : Hand?
     private var secHand : Hand?
+    private var dtime : WatchDigitalTime?
     private var hourHand : Hand?
     private let chronograph : Chronograph?
     private let grandeComplication : GrandeComplication?
@@ -38,7 +39,7 @@ class Watch: NSObject,Codable,NSCopying{
     private var biColour : DuoTone?
     private var customizable : Bool?
     
-    init(id:Int?=nil,name:String,dial:String?=nil,topLayer:TopLayer?=nil,secHand:Hand?=nil,minHand:Hand?=nil,hourHand:Hand?=nil,date:WatchDate?=nil,chronograph:Chronograph?=nil,grandeComplication:GrandeComplication?=nil,dayCycle:DayCycle? = nil,day:Day?=nil,battery:Battery?=nil,skeleton:Skeleton?=nil,tourbillon:Tourbillon?=nil,secondOnTop:Bool? = true,stop2Go:Bool? = false,gmt:Gmt? = nil,luminescent:Bool? = false,biColour: DuoTone?=nil,customizable:Bool?=false,alternative:[Watch?]=[]) {
+    init(id:Int?=nil,name:String,dial:String?=nil, dtime:WatchDigitalTime?=nil,topLayer:TopLayer?=nil,secHand:Hand?=nil,minHand:Hand?=nil,hourHand:Hand?=nil,date:WatchDate?=nil,chronograph:Chronograph?=nil,grandeComplication:GrandeComplication?=nil,dayCycle:DayCycle? = nil,day:Day?=nil,battery:Battery?=nil,skeleton:Skeleton?=nil,tourbillon:Tourbillon?=nil,secondOnTop:Bool? = true,stop2Go:Bool? = false,gmt:Gmt? = nil,luminescent:Bool? = false,biColour: DuoTone?=nil,customizable:Bool?=false,alternative:[Watch?]=[]) {
         self.id = id
         self.name = name
         self.date = date
@@ -60,9 +61,9 @@ class Watch: NSObject,Codable,NSCopying{
         self.luminescent = luminescent
         self.biColour = biColour
         self.topLayer = topLayer
+        self.dtime = dtime
         self.customizable = customizable
     }
-    
     
     func getId() -> Int?{
         return id
@@ -82,6 +83,10 @@ class Watch: NSObject,Codable,NSCopying{
     
     func getSecondHand() -> Hand?{
         return secHand
+    }
+    
+    func getDigitalTime() -> WatchDigitalTime?{
+        return dtime
     }
     
     func getMinuteHand() -> Hand?{

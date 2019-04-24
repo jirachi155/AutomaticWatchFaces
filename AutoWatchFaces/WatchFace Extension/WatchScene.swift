@@ -28,6 +28,7 @@ class WatchScene: SKScene {
     var gmtHand : SKSpriteNode = SKSpriteNode()
     var topLayer : SKSpriteNode = SKSpriteNode()
     var nightLayer : SKSpriteNode = SKSpriteNode()
+    var digitalTimeLabel : SKLabelNode = SKLabelNode()
     
     
     let watch = WatchManager.getActualWatch()
@@ -93,7 +94,6 @@ class WatchScene: SKScene {
         
         if let secHand : SKSpriteNode = self.childNode(withName: "SecondHand") as? SKSpriteNode{
             secondHand = secHand
-            
             if (watch.getSecondHand() != nil){
                 if watch.getLuminescent() == true && WatchManager.isNightModeEnable(){
                     let secondHandName = (watch.getSecondHand()?.getImageName())! + "-night"
@@ -177,6 +177,29 @@ class WatchScene: SKScene {
             }
             else{
                 dateLabel.isHidden = true
+            }
+        }
+        
+        if let dtime : SKLabelNode = self.childNode(withName: "dtime") as? SKLabelNode{
+            digitalTimeLabel = dtime
+
+            if watch.getDigitalTime() != nil{
+                digitalTimeLabel.isHidden = false
+////                digitalTimeLabel.position = CGPoint(x:(watch.getDigitalTime()?.getPosition()[0])!, y: (watch.getDigitalTime()?.getPosition()[1])!)
+//                if watch.getDigitalTime()?.getFontName() != nil{
+//                    digitalTimeLabel.fontName = watch.getDigitalTime()?.getFontName()
+//                }
+//                else{
+//                    digitalTimeLabel.fontName = "Helvetica Neue Bold"
+//                }
+////                digitalTimeLabel.fontColor = UIColor(red: CGFloat((watch.getDigitalTime()?.getColor()[0])!), green: CGFloat((watch.getDigitalTime()?.getColor()[1])!), blue: CGFloat((watch.getDigitalTime()?.getColor()[2])!), alpha: 1.0)
+//                digitalTimeLabel.fontSize = CGFloat((watch.getDigitalTime()?.getFontSize())!)
+////                dateLabel.zRotation = CGFloat((watch.getDate()?.getFontRotation())!)
+////                dateLabel.zPosition = 1
+////                dateLabel.horizontalAlignmentMode = .center
+            }
+            else{
+                digitalTimeLabel.isHidden = true
             }
         }
         
@@ -415,7 +438,6 @@ class WatchScene: SKScene {
         let weekday = CGFloat(calendar.component(.weekday, from: date))
         let day = CGFloat(calendar.component(.day, from: date))
         
-        
         minuteHand.zRotation = -1 * degreesToRadians((minutes+(seconds/60))*6)
         hourHand.zRotation = -1 * degreesToRadians(hour*30 + minutes/2)
         
@@ -445,6 +467,13 @@ class WatchScene: SKScene {
         
         if watch.getDate() != nil{
             dateLabel.text = String(calendar.component(.day, from: date))
+        }
+        
+        if watch.getDigitalTime() != nil {
+//            digitalTimeLabel.text = "\(seconds)"
+            digitalTimeLabel.text = String(calendar.component(.second, from: date))
+//            digitalTimeLabel.text = "mamma mia"
+            print("maaaadre")
         }
         
         if watch.getDay() != nil {

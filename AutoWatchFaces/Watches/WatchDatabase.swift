@@ -44,7 +44,7 @@ struct WatchDatabase {
             
             Watch(name:"Alt1",dial:"HermesDial-5",minHand:Hand(image: "HermesMinute-2", scale: 0.8),hourHand:Hand(image: "HermesHour-2", scale: 0.5),date:WatchDate(positionY: -56, color: [1.0,1.0,1.0]),customizable:true)]),
         
-        //                         Watch(id:11,name: "Seiko SKX007", dial: "SKXDial", secHand: Hand(image: "SKXSecond", scale: 0.28), minHand: Hand(image: "SKXMinute", scale: 0.08), hourHand: Hand(image: "SKXHour", scale: 0.08),date:WatchDate(positionX: 78, positionY: 0.2, color: [0.0,0.0,0.0])),
+                                 Watch(id:11,name: "Seiko SKX007", dial: "SKXDial", secHand: Hand(image: "SKXSecond", scale: 0.28), minHand: Hand(image: "SKXMinute", scale: 0.08), hourHand: Hand(image: "SKXHour", scale: 0.08),date:WatchDate(positionX: 78, positionY: 0.2, color: [0.0,0.0,0.0])),
         
         Watch(id:12,name: "Hublot Spirit of Big Bang", dial: "BBDial", secHand: Hand(image: "BBSecond", scale: 0.83), minHand: Hand(image: "BBMinute", scale: 0.8), hourHand: Hand(image: "BBHour", scale: 0.5), date: WatchDate(positionX: 0, positionY: -99, color: [1.0,1.0,1.0])),
         
@@ -54,6 +54,12 @@ struct WatchDatabase {
         
         Watch(id:14,name: "Patek Philippe Grande Complication", dial: "GCDial", minHand: Hand(image: "GCMinute", scale: 0.8), hourHand: Hand(image: "GCHour", scale: 0.46), grandeComplication:GrandeComplication(weekdayHand: Hand(image: "GCSub", positionX: -34, scale: 0.25), monthHand: Hand(image: "GCSub", positionX: 35, scale: 0.25), dateHand: Hand(image: "GCDate",positionY: -49.9, scale: 0.5)),dayCycle:DayCycle(dial: "GCDayCycle", positionX: 0.2, positionY: -49.9, scale: 0.4),alternative:[Watch(name: "Alt1", dial: "GCDial-1",minHand: Hand(image: "GCMinute", scale: 0.8), hourHand: Hand(image: "GCHour", scale: 0.46), grandeComplication:GrandeComplication(weekdayHand: Hand(image: "GCSub", positionX: -34, scale: 0.25), monthHand: Hand(image: "GCSub", positionX: 35, scale: 0.25), dateHand: Hand(image: "GCDate",positionY: -49.9, scale: 0.5)),dayCycle:DayCycle(dial: "GCDayCycle", positionX: 0.2, positionY: -49.9, scale: 0.4)),Watch(name: "Alt2", dial: "GCDial-2",minHand: Hand(image: "GCMinute", scale: 0.8), hourHand: Hand(image: "GCHour", scale: 0.46), grandeComplication:GrandeComplication(weekdayHand: Hand(image: "GCSub", positionX: -34, scale: 0.25), monthHand: Hand(image: "GCSub", positionX: 35, scale: 0.25), dateHand: Hand(image: "GCDate",positionY: -49.9, scale: 0.5)),dayCycle:DayCycle(dial: "GCDayCycle", positionX: 0.2, positionY: -49.9, scale: 0.4))]),
         
+        //        Watch(id:1,name: "Rolex Milgauss", dial: "MGDial", secHand: Hand(image: "MGSecond", scale: 0.84), minHand: Hand(image: "MGMinute", scale: 0.84), hourHand: Hand(image: "MGHour", scale: 0.7)),
+        
+//        Watch(id:39,name: "Apple Nike Minus", dial: "N+Dial", teoHand: DigitalTime(label: "123.0", positionX: 46, scale: 0.45), customizable:false),
+        
+        Watch(id:39,name: "Apple Nike Minus", dtime: WatchDigitalTime(positionX: 0, positionY: 0, color: [255.0,1.0,1.0]), customizable: true),
+        
         Watch(id:15,name: "Rolex Day-Date", dial: "PreDial", secHand: Hand(image: "PreSecond", scale: 0.9), minHand: Hand(image: "PreMinute", scale: 0.85), hourHand: Hand(image: "PreHour", scale: 0.45),date: WatchDate(positionX: 71.0, positionY: 0.2, color: [0.0,0.0,0.0]),day:Day(dayPrefix: "Pre", positionX: 0, positionY: 98, xScale: 0.571,yScale:0.14),alternative:[
             Watch(name: "Alt1",dial:"PreDial-1",secHand: Hand(image: "PreSecond", scale: 0.9), minHand: Hand(image: "PreMinute", scale: 0.85), hourHand: Hand(image: "PreHour", scale: 0.45),date: WatchDate(positionX: 71.0, positionY: 0.2, color: [1.0,1.0,1.0]),day:Day(dayPrefix: "Pre2", positionX: 0, positionY: 98, xScale: 0.571,yScale:0.14))]),
         
@@ -61,7 +67,7 @@ struct WatchDatabase {
         
         Watch(id: 17, name: "IWC DaVinci Tourbillon", dial: "DaVDial", minHand: Hand(image: "DaVMinute", scale: 0.85), hourHand: Hand(image: "DaVHour", scale: 0.65),chronograph:Chronograph(secHand: Hand(image: "DaVChrSecond",positionX:-1,positionY:-1, scale: 0.9), minuteHand: Hand(image: "DaVSub",positionX:0.5,positionY:56, scale: 0.5), hourHand: Hand(image: "DaVSub",positionX:0.5,positionY:56, scale: 0.7)),skeleton:Skeleton(balanceWheel: "DaVBalance",positionY:-58,scale: 0.2),tourbillon:Tourbillon(tourbillion: "DaVTourbillon")),
         
-        Watch(id:18,name: "Apple Nike +", dial: "N+Dial", secHand: Hand(image: "N+Second", scale: 1), minHand: Hand(image: "N+Minute", scale: 1), hourHand: Hand(image: "N+Hour", scale: 1),customizable:true,alternative:[
+        Watch(id:18,name: "Apple Nike +", dial: "N+Dial", secHand: Hand(image: "N+Second", scale: 1), minHand: Hand(image: "N+Second", scale: 1), hourHand: Hand(image: "N+Hour", scale: 1),customizable:true,alternative:[
             Watch(name: "Alt1",dial:"N+Dial-1",secHand: Hand(image: "N+Second-1", scale: 1), minHand: Hand(image: "N+Minute", scale: 1), hourHand: Hand(image: "N+Hour", scale: 1),customizable:true)
             ,Watch(name: "Alt2",dial:"N+Dial-2",secHand: Hand(image: "N+Second", scale: 1), minHand: Hand(image: "N+Minute-1", scale: 1), hourHand: Hand(image: "N+Hour-1", scale: 1),customizable:true),
              Watch(name: "Alt3",dial:"N+Dial-3",secHand:Hand(image: "N+Second-1", scale: 1),minHand: Hand(image: "N+Minute", scale: 1), hourHand: Hand(image: "N+Hour", scale: 1),customizable:true),
@@ -72,9 +78,7 @@ struct WatchDatabase {
             [Watch(name: "Alt1",dial:"OakDial-1",secHand: Hand(image: "OakSecond", scale: 0.8), minHand: Hand(image: "OakMinute", scale: 0.7), hourHand: Hand(image: "OakHour", scale: 0.45),date:WatchDate(positionX: 62, positionY: -1, color: [1.0,1.0,1.0])),
              Watch(name: "Alt1",dial:"OakDial-2",secHand: Hand(image: "OakSecond", scale: 0.8), minHand: Hand(image: "OakMinute", scale: 0.7), hourHand: Hand(image: "OakHour", scale: 0.45),date:WatchDate(positionX: 62, positionY: -1, color: [1.0,1.0,1.0]))]),
         
-        Watch(id:20,name: "Mondaine", dial: "MonDial", secHand: Hand(image: "MonSecond", scale: 0.8), minHand: Hand(image: "MonMinute", scale: 0.8), hourHand: Hand(image: "MonHour", scale: 0.5),stop2Go: true,alternative:[Watch(name: "MondaineAlt", dial: "MonDial-1", secHand: Hand(image: "MonSecond", scale: 0.8), minHand: Hand(image: "MonMinute-1", scale: 0.8), hourHand: Hand(image: "MonHour-1", scale: 0.5))
-                                                                                                                                                                                                                             
-                                                                                                                                                                                                                             ]),
+        Watch(id:20,name: "Mondaine", dial: "MonDial", secHand: Hand(image: "MonSecond", scale: 0.8), minHand: Hand(image: "MonMinute", scale: 0.8), hourHand: Hand(image: "MonHour", scale: 0.5),stop2Go: true,alternative:[Watch(name: "MondaineAlt", dial: "MonDial-1", secHand: Hand(image: "MonSecond", scale: 0.8), minHand: Hand(image: "MonMinute-1", scale: 0.8), hourHand: Hand(image: "MonHour-1", scale: 0.5))]),
         
         Watch(id:21,name: "Rolex Sea Dweller", dial: "SeaDial", secHand: Hand(image: "ExSecond", scale: 0.7), minHand: Hand(image: "ExMinute", scale: 0.7), hourHand: Hand(image: "ExHour", scale: 0.44),date:WatchDate(positionX: 63, positionY: 1, color: [0.0,0.0,0.0],fontSize:13),luminescent:true),
         
